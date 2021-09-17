@@ -1,0 +1,23 @@
+{
+  "name": "mim-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mim15 <mim.blog15@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "contentful": "9.0.0",
+    "dayjs": "1.10.7",
+    "fslightbox-react": "1.6.2-2",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-compare-image": "3.1.0",
+    "react-dom": "17.0.2",
+    "sass": "1.41.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {}
+}
