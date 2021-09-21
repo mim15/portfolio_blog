@@ -1,4 +1,7 @@
+import Link from 'next/link'
+
 import Footerimage from '@/public/Logo/logo.svg'
+import styled from '@/styles/footer.module.scss'
 
 export default function Footer() {
   return (

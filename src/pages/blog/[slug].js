@@ -1,44 +1,41 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-let client = require('contentful').createClient({
-  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN
-})
+import { client } from '@/utils/contentful'
 
 
-export async function getStaticPaths() {
-  let data = await client.getEntries({
+export const getStaticPaths = async ({ params }) => {
+  const entries = await client.getEntries({
     content_type: 'article'
   })
 
   return {
-    paths: data.items.map((item) => ({
-      params: { slug: item.fields.slug },
+    paths: entries.items.map((item) => ({
+      params: { slug: item.fields.slug }
     })),
     fallback: true
   }
 }
 
-export async function getStaticProps({ params }) {
-  let data = await client.getEntries({
-    content_type: "article",
+
+export const getStaticProps = async ({  params }) => {
+  const entries = await client.getEntries({
+    content_type: 'article',
     'fields.slug': params.slug
   })
-
+  
   return {
     props: {
-      article: data.items[0]
+      posts: entries.items[0]
     },
     revalidate: 1
   }
 }
 
-
-export default function Article({ article }) {
+export default function Article({ posts }) {
   return (
     <div>
-      <h1>{article.fields.title}</h1>
-      <div>{documentToReactComponents(article.fields.content, {
+      <h1>{posts.fields.title}</h1>
+      <div>{documentToReactComponents(posts.fields.content, {
         // renderNode: {
         //   [BLOCKS.EMBEDDED_ASSET]: (node) => (
         //     <Image

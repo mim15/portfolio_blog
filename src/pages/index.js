@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Heading from '../components/head'
+import Heading from '@/components/head'
 
 // import scss
-import styled from "../styles/pages/home.module.scss"
+import styled from "@/styles/home.module.scss"
 
 export default function Home() {
   return (
