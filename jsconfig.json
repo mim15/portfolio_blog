@@ -9,5 +9,8 @@
       "@/utils/*": ["utils/*"],
       
     }
-  }
+  },
+  "include": [
+    "./resources/js/**/*"
+  ]
 }
