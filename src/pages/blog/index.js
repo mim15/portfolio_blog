@@ -17,21 +17,19 @@ export const getStaticProps = async ({  params }) => {
 export default function Article({ posts }) {
   return (
     <>
-      <main>
-        <div>
-          {posts.length > 0
-          ? posts.map((p, index) => (
-            index < 10 &&<Post
-              key={p.fields.slug}
-              title={p.fields.title}
-              slug={p.fields.slug}
-              createdAt={p.sys.createdAt}
-            />
-          ))
-          : null}
-        </div>
-        <Pagination posts={posts} currentNum={1} />
-      </main>
+      {posts.length > 0
+      ? posts.map((p, index) => (
+        index < 10 &&<Post
+          key={p.fields.slug}
+          photo={p.fields.heroImage.fields.file.url}
+          title={p.fields.title}
+          createdAt={p.sys.createdat}
+          description={p.fields.description}
+          slug={p.fields.slug}
+        />
+      ))
+      : null}
+      <Pagination posts={posts} currentNum={1} />
     </>
   )
 }

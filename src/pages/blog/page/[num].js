@@ -2,11 +2,11 @@ import { client } from '@/utils/contentful'
 
 import Post from '@/components/post'
 import Pagination from '@/components/Pagination'
+import styled from '@/styles/[num].module.scss'
 
 const Paged = ({ posts, num, allPosts }) => {
   return (
     <>
-        <div>
           {posts.length > 0
             ? posts.map((p) => (
                 <Post
@@ -18,7 +18,6 @@ const Paged = ({ posts, num, allPosts }) => {
               />
               ))
             : null}
-          </div>
         <Pagination posts={allPosts} currentNum={Number(num)} />
     </>
   )

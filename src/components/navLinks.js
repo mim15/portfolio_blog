@@ -20,11 +20,11 @@ export default function NavLinks(props) {
         <span className={styled.bl_menuToggle_btn} />
       </button>
       <ul className={Togglemenu} >
-        <li className={styled.sm_headerNav_item}>
+        {/* <li className={styled.sm_headerNav_item}>
           <Link title="about" href="/about">
             <a className={styled.sm_headerNav_txt}>About</a>
           </Link>
-        </li>
+        </li> */}
         <li className={styled.sm_headerNav_item}>
           <Link title="portfolio" href="/portfolio">
             <a className={styled.sm_headerNav_txt}>Portfolio</a>
@@ -45,11 +45,11 @@ export default function NavLinks(props) {
         </li>
       </ul>
       <ul className={styled.lg_headerNav} >
-        <li className={styled.lg_headerNav_item}>
+        {/* <li className={styled.lg_headerNav_item}>
           <Link title="about" href="/about">
             <a className={router.pathname == "/about" ? `${styled["active"]} ${styled.lg_headerNav_txt}`  : styled.lg_headerNav_txt}>About</a>
           </Link>
-        </li>
+        </li> */}
         <li className={styled.lg_headerNav_item}>
           <Link title="portfolio" href="/portfolio">
             <a className={router.pathname == "/portfolio" ? `${styled["active"]} ${styled.lg_headerNav_txt}`  : styled.lg_headerNav_txt}>Portfolio</a>

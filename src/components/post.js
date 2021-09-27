@@ -4,19 +4,20 @@ import dayjs from 'dayjs'
 
 import styled from '@/styles/post.module.scss'
 
-export default function Post({ title, slug, createdAt, description }) {
+export default function Post({ photo, title, createdAt, description, slug }) {
   const day = dayjs(createdAt)
-
   return (
     <>
-    <div className={styled.card}>
-      <div className={styled.main}>
+    <div className={styled.bl_card}>
+      <figure className={styled.bl_card_imgWrapper}>
+        <img className={styled.bl_card_photo} src={photo} />
+      </figure>
+      <div className={styled.bl_card_body}>
+        <h2 className={styled.bl_card_ttl}>{title}</h2>
+        <p className={styled.bl_card_txtLine}>{day.format("YYYY.MM.DD")}</p>
+        <p className={styled.bl_card_txt}>{description}</p>
         <Link href={`/blog/${encodeURIComponent(slug)}`}>
-          <a className={styled.link}>
-            <h2 className={styled.heading}>{title}</h2>
-            <p className={styled.description}>{description}</p>
-            <p className={styled.date}>{day.format("YYYY.MM.DD")}</p>
-          </a>
+          <a className={styled.bl_card_link}>Read&nbsp;More</a>
         </Link>
       </div>
     </div>

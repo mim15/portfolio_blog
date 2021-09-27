@@ -1,5 +1,9 @@
 :root {
   --font-primary: "Lovelo-LineLight";
+  --color-base: #0B2436;
+  --color-gray: #616161;
+  
+
 }
 
 
@@ -10,16 +14,16 @@
   font-style: normal;
 }
 
-// @font-face {
-//   font-family: "Montserrat-Regular";
-//   src: url("../public/font/Montserrat-Regular.woff2") format("woff");
-//   font-weight: 400;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("../public/font/NotoSerifJP-Medium.woff2") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: "Mulish-Light";
-//   src: url("../public/font/Mulish-Light.woff2") format("woff");
-//   font-weight: 300;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Klee One";
+  src: url("../public/font/KleeOne-Regular.woff2") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
